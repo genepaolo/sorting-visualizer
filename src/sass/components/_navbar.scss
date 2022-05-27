@@ -1,11 +1,23 @@
+.navbar-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
 .navbar-nav{
     flex-direction: row;
+    flex-wrap: wrap;
 }
 .nav-item{
     margin: 0.5rem;
     @include respond(tab-port){
         display: inline-block;
-        width: 50%;
+        width: 20%;
+        margin: 0;
+    }
+    @include respond(phone){
+        display: inline-block;
+        width: 33.333%;
         margin: 0;
     }
     &-btn{
