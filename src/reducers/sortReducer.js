@@ -12,8 +12,8 @@ const sortReducer = (state="BUBBLE", action) =>{
             return 'INSERTION';
         case 'SELECTION':
             return 'SELECTION';
-            case 'QUICK':
-                return 'QUICK';
+        case 'QUICK':
+            return 'QUICK';
     }
     return state;
 }

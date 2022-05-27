@@ -4,6 +4,7 @@ import BubbleSort from "./BubbleSort";
 import InsertionSort from "./InsertionSort";
 import SelectionSort from "./SelectionSort";
 import QuickSort from "./QuickSort";
+import MergeSort from "./MergeSort";
 import styles from "../sass/abstract/_variables.scss";
 
 const ANIMATION_SPEED_MS = 10;
@@ -51,7 +52,9 @@ function SortingVisualizer(){
             return SelectionSort(array);
         }else if(sort=="QUICK"){
             return QuickSort(array);
-        }
+        }else if(sort=="MERGE"){
+          return MergeSort(array);
+      }
     }
 
     function sortArray(){
