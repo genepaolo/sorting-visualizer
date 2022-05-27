@@ -5,7 +5,7 @@
 // can repeat to the subarray left of pivot and sub array left of pivot
 
 function quickSort(array) {
-    let animations = []
+    let animations = [];
     quickSortArray(array, 0,array.length-1, animations);
     for(let i = 0;i<array.length;i++){
         animations.push(['I',i,i]);

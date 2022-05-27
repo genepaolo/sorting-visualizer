@@ -1,40 +1,49 @@
-function MergeSort(array) {
-    // Write your code here.
-    let animations = []
-    array = mergeHelper(array, animations);
+function MergeSort(array){
+    let animations = new Array();
+    startMergeSort(array, animations);
     for(let i = 0;i<array.length;i++){
         animations.push(['I',i,i]);
         animations.push(['F',i,array[i]]);
     }
     return animations;
-  }
+}
 
-  function mergeHelper(array, animations){
-    if(array.length<=1) return array;
-    let m = Math.floor(array.length/2);
-    let arrayLeft = array.slice(0, m);
-    let arrayRight = array.slice(m);
-    return merge(mergeHelper(arrayLeft,animations), mergeHelper(arrayRight, animations), animations);
-  }
+function startMergeSort(array, animations) {
+    // Write your code here.
+    if(array.length <= 1) return array;
+    const auxArray = array.slice();
+    mergeSortHelper(array, 0, array.length-1, auxArray, animations);
+    return array;
+}
+function mergeSortHelper(array, l, r,auxArray, animations){
+    if(l==r) return;
+    const m = Math.floor( (l+r)/2);
+    animations.push(['I',m,m]);
+    animations.push(['N',m,m]);
+    mergeSortHelper(auxArray, l,  m, array, animations);
+    mergeSortHelper(auxArray,m+1, r, array, animations);
+    merge(array,l,m,r,auxArray, animations);
+}
   
-  function merge(arrayOne, arrayTwo, animations){
-      const sortedArray = new Array(arrayOne.length+arrayTwo.length);
-      let i = 0, j = 0, k = 0;
-      while(k<sortedArray.length){
-          if(i<arrayOne.length && j<arrayTwo.length){
-              if(arrayOne[i] < arrayTwo[j]){
-                  sortedArray[k] = arrayOne[i++];
-              }else{
-                  sortedArray[k] = arrayTwo[j++];
-              }
-          }else if(i<arrayOne.length){
-              sortedArray[k] = arrayOne[i++];
-          }else{
-              sortedArray[k] = arrayTwo[j++];
-          }
-          k++
-      }
-      return sortedArray;
-  }
+function merge(array, left, middle, right, auxArray, animations){
+    let k = left, i = left, j = middle+1
+    while(i <= middle && j<=right){
+        if(auxArray[i] <= auxArray[j]){
+            animations.push(['SN',k,auxArray[i]]);
+            array[k++] = auxArray[i++];
+        }else{
+            animations.push(['SN',k,auxArray[j]]);
+            array[k++] = auxArray[j++];
+        }
+    }
+    while (i<=middle){
+        animations.push(['SN',k,auxArray[i]]);
+        array[k++] = auxArray[i++];
+    }
+    while (j<=right){
+        animations.push(['SN',k,auxArray[j]]);
+        array[k++] = auxArray[j++];
+    }
+}
 
 export default MergeSort;
