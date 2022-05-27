@@ -47,7 +47,7 @@ function Navbar(){
                         <button className="nav-item-btn" onClick={ () => updateSort('QUICK')} style={themes[theme]}>Quick Sort</button>
                     </li>
                     <li className="nav-item">
-                        <button className="nav-item-btn" onClick={ () => updateSort('MERGE')} style={themes[theme]}>Merge Sort</button>
+                        <button className="nav-item-btn" onClick={ () => updateSort('MERGE')} style={{backgroundColor: "red"}}>Merge Sort</button>
                     </li>
                 </ul>
 
