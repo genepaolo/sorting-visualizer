@@ -1,0 +1,45 @@
+.navbar-nav{
+    flex-direction: row;
+}
+.nav-item{
+    margin: 0.5rem;
+    @include respond(tab-port){
+        display: inline-block;
+        width: 50%;
+        margin: 0;
+    }
+    &-btn{
+        border: none;
+        border-radius: 1rem;
+        padding: 0.5rem 1rem;
+        background-color: transparent;
+        transition: all 0.2s ease-out;
+       
+        &:hover{
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0.5rem 0.5rem 0.5rem rgba(black, 0.2);
+        }
+        &:active{
+            transform: translateY(2px) scale(0.95);
+            box-shadow: 0.1rem 0.1rem 0.1rem rgba(black, 0.8);
+        }
+    }
+    
+}
+
+.menu-item-btn{
+    width: 100%;
+    text-align: center;
+    border: none;
+    padding: 0.5rem;
+    background-color: transparent;
+    transition: all 0.2s ease-out;
+    &:hover{
+        transform: translateY(-5px);
+        box-shadow: 0rem 0.5rem 1rem rgba(black, 0.2);
+    }
+    &:active{
+        transform: translateY(2px);
+        box-shadow: 0rem 0.1rem 1rem rgba(black, 0.8);
+    }
+}

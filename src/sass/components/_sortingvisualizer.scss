@@ -1,0 +1,38 @@
+.visualizer-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 78vh;
+}
+
+.cell{
+    display: inline-block;
+    text-align: center;
+    border-radius: 5px;
+    transition: all 0.2s ease-out;
+    box-shadow: 0.5rem 0.5rem 0.5rem rgba(black, 0.2);
+    &:hover{
+        transform: translateY(-2rem);
+    }
+}
+
+.btn-containers{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    &-btns{
+        border: none;
+        border-radius: 1rem;
+        padding: 0.5rem 2rem;
+        background-color: transparent;
+        &:hover{
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0.5rem 0.5rem 0.5rem rgba(black, 0.2);
+        }
+        &:active{
+            transform: translateY(2px) scale(0.95);
+            box-shadow: 0.1rem 0.1rem 0.1rem rgba(black, 0.8);
+        }
+    }
+}

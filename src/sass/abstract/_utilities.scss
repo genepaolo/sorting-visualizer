@@ -1,0 +1,10 @@
+.u-center-text{
+    text-align: center;
+}
+
+.container-app{
+    padding: 0% 7%;
+    @include respond(tab-port){
+        padding: 0% 3%;
+    }
+}
