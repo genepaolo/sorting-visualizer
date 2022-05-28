@@ -1,23 +1,19 @@
 // Light Mode
-
 $theme-light: (
     'themeLightBg1': white,
     'themeLightBg2':#e4e5f1,
 );
-$theme-dark: (
-    'themeDarkBg1': #082c6c,
-    'themeDarkBg2':#444444,
-);
-$theme-cp: (
-    'themeCPBg1': black,
-    'themeCPBg2':#bd00ff,
-);
-
 $theme-light-cell: (
     'themeLightCell1': #fb8500,
     'themeLightCell2':purple,
     'themeLightCell3':#084f64,
     'themeLightCell4':lightgreen,
+);
+
+// Dark Mode
+$theme-dark: (
+    'themeDarkBg1': #082c6c,
+    'themeDarkBg2':#444444,
 );
 $theme-dark-cell: (
     'themeDarkCell1': #17c3b2,
@@ -25,6 +21,14 @@ $theme-dark-cell: (
     'themeDarkCell3': #7858A6,
     'themeDarkCell4':#f4d47c
 );
+
+// Cyberpunk
+
+$theme-cp: (
+    'themeCPBg1': black,
+    'themeCPBg2':#bd00ff,
+);
+
 $theme-cp-cell: (
     'themeCPCell1': #53ebe4,
     'themeCPCell2':purple,
@@ -37,16 +41,18 @@ $theme-cp-cell: (
     @each $key, $value in $theme-light{
         #{unquote($key)} : $value;
     }
-    @each $key, $value in $theme-dark{
-        #{unquote($key)} : $value;
-    }
-    @each $key, $value in $theme-cp{
-        #{unquote($key)} : $value;
-    }
     @each $key, $value in $theme-light-cell{
         #{unquote($key)} : $value;
     }
+
+    @each $key, $value in $theme-dark{
+        #{unquote($key)} : $value;
+    }
     @each $key, $value in $theme-dark-cell{
+        #{unquote($key)} : $value;
+    }
+    
+    @each $key, $value in $theme-cp{
         #{unquote($key)} : $value;
     }
     @each $key, $value in $theme-cp-cell{
